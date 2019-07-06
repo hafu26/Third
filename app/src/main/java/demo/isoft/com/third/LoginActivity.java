@@ -113,7 +113,7 @@ public class LoginActivity extends AppCompatActivity {
             actionBar.setDisplayHomeAsUpEnabled(true);//显示返回的箭头
             actionBar.setDisplayShowHomeEnabled(true);//用与导航栏的最前面的图标是否显示
             actionBar.setDisplayUseLogoEnabled(true);
-//           actionBar.setBackgroundDrawable( getDrawable(R.mipmap.logo));//设置导航栏背景
+          actionBar.setBackgroundDrawable( getDrawable(R.mipmap.guid_show1));//设置导航栏背景
            actionBar.setIcon(getDrawable(R.mipmap.logo));//导航栏图标
         }
     }

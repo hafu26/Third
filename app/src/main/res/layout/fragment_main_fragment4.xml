@@ -5,10 +5,15 @@
     android:background="@mipmap/guid_show4"
     tools:context="demo.isoft.com.third.MainFragment4">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+  <!--  <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="4" />
+        android:layout_height="match_parent">-->
+        <ListView
+            android:id="@+id/percenter"
+            android:layout_marginTop="?attr/actionBarSize"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </ListView>
+    <!--</ScrollView>-->
 
 </FrameLayout>

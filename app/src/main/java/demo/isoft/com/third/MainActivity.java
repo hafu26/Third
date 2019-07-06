@@ -1,5 +1,6 @@
 package demo.isoft.com.third;
 
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
@@ -23,6 +24,10 @@ ViewPager viewPager;
     MainFragment3 mainFragment3;
     MainFragment4 mainFragment4;
     RadioGroup radioGroup;
+    RadioButton radioButton1;
+    RadioButton radioButton2;
+    RadioButton radioButton3;
+    RadioButton radioButton4;
     public void init(){
         viewPager = (ViewPager) findViewById(R.id.mainViewPager);
         viewPager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
@@ -59,6 +64,29 @@ ViewPager viewPager;
                 return 4;
             }
         });
+        viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener(){
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                if(position==0)
+                    radioButton1.setChecked(true);
+                if(position==1)
+                    radioButton2.setChecked(true);
+                if(position==2)
+                    radioButton3.setChecked(true);
+                if(position==3)
+                    radioButton4.setChecked(true);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
     }
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -74,6 +102,10 @@ ViewPager viewPager;
         setSupportActionBar(toolbar);
         viewPager = (ViewPager) findViewById(R.id.mainViewPager);
         radioGroup= (RadioGroup) findViewById(R.id.bottomHav);
+        radioButton1 = (RadioButton) findViewById(R.id.first);
+        radioButton2 = (RadioButton) findViewById(R.id.second);
+        radioButton3= (RadioButton) findViewById(R.id.third);
+        radioButton4= (RadioButton) findViewById(R.id.forth);
         init();
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener(){
             @Override
@@ -81,15 +113,31 @@ ViewPager viewPager;
                 Toast.makeText(MainActivity.this,"aa"+checkedId,Toast.LENGTH_SHORT).show();
                 if(checkedId==R.id.first){
                     viewPager.setCurrentItem(0);
+                    radioButton1.setTextColor(Color.RED);
+                    radioButton2.setTextColor(Color.BLACK);
+                    radioButton3.setTextColor(Color.BLACK);
+                    radioButton4.setTextColor(Color.BLACK);
                 }
                 if(checkedId==R.id.second){
                     viewPager.setCurrentItem(1);
+                    radioButton1.setTextColor(Color.BLACK);
+                    radioButton2.setTextColor(Color.RED);
+                    radioButton3.setTextColor(Color.BLACK);
+                    radioButton4.setTextColor(Color.BLACK);
                 }
                 if(checkedId==R.id.third){
                     viewPager.setCurrentItem(2);
+                    radioButton1.setTextColor(Color.BLACK);
+                    radioButton2.setTextColor(Color.BLACK);
+                    radioButton3.setTextColor(Color.RED);
+                    radioButton4.setTextColor(Color.BLACK);
                 }
                 if(checkedId==R.id.forth){
                     viewPager.setCurrentItem(3);
+                    radioButton1.setTextColor(Color.BLACK);
+                    radioButton2.setTextColor(Color.BLACK);
+                    radioButton3.setTextColor(Color.BLACK);
+                    radioButton4.setTextColor(Color.RED);
                 }
             }
         });

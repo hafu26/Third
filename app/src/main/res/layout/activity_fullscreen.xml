@@ -3,15 +3,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="0dp"
+    android:background="@mipmap/flash"
     tools:context="demo.isoft.com.third.FullscreenActivity">
 
 
-    <pl.droidsonroids.gif.GifImageView
+    <!--<pl.droidsonroids.gif.GifImageView
         android:id="@+id/gifImageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="0dp"
-        android:src="@mipmap/view1" />
+        android:src="@mipmap/view1" />-->
 
     <TextView
         android:id="@+id/skip"
@@ -24,5 +25,4 @@
         android:layout_marginRight="30dp"
         android:textSize="20dp"
         android:text="跳过5"/>
-
 </FrameLayout>
